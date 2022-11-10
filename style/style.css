@@ -1,0 +1,257 @@
+/* CSS Reset */
+body,
+ul,
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Container */
+.container {
+    width: 1344px;
+    /* width + guttter */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+#navbar {
+    padding: 62px 0;
+    position: absolute;
+    width: 100%;
+}
+
+#navbar .container {
+    justify-content: space-between;
+}
+
+#navbar .logo {
+    padding: 0 12px;
+}
+
+#navbar .logo img {
+    height: 60px;
+    margin: auto;
+}
+
+#navbar .menu {
+    padding: 0 12px;
+}
+
+#navbar ul {
+    list-style: none;
+}
+
+#navbar ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* TODO */
+#navbar ul li {
+    float: left;
+    margin: auto 12px;
+}
+
+#navbar ul li a {
+    font-family: 'Anybody', cursive;
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar ul li a .active {
+    font-weight: bold;
+}
+
+#navbar .button {
+    padding: 0 12px;
+}
+
+#navbar .button a {
+    padding: 14px 24px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #293241;
+}
+
+#navbar .button a {
+    align-self: baseline;
+}
+
+/* Hero */
+/* TODO */
+#hero {
+    background-color: #0D1728;
+    height: 1276px;
+
+    background-image: url(../images/);
+    background-position: 295px 449px;
+}
+
+#hero .container .content {
+    margin-top: 191px;
+    padding: 0 12px;
+}
+
+#hero .content p {
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+
+    /* identical to box height */
+    text-align: center;
+
+    color: #FFFFFF;
+
+    opacity: 0.7;
+
+    margin-bottom: 28px;
+}
+
+#hero .content h1 {
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 138%;
+
+    /* or 99px */
+    text-align: center;
+
+    color: #FFFFFF;
+
+    margin-bottom: 32px;
+}
+
+#hero .content .getting-started {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 1000px;
+    margin-bottom: 70px;
+}
+
+#hero .content .getting-started:focus {
+    outline: blue;
+}
+
+#hero .content .getting-started form {
+    display: flex;
+    width: 100%;
+}
+
+
+#hero .content .getting-started input {
+    padding: 30px 48px;
+    border: 0;
+    flex: 1;
+    border-radius: 1000px 0 0 1000px;
+
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+    background: transparent;
+}
+
+#hero .content .getting-started input:focus {
+    outline: none;
+}
+
+#hero .content .getting-started button {
+    padding: 30px 38px;
+    border-radius: 1000px;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 21px;
+
+    /* identical to box height */
+
+    color: #293241;
+
+}
+
+/* Col 4 grid*/
+.col-4 {
+    width: calc(100%/3 -24px);
+}
+
+/* Customer */
+
+#customer .container {}
+
+#customer .container h5 {
+    padding-top: 422px;
+    width: 872px;
+
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 130%;
+
+    /* or 62px */
+    text-align: center;
+
+    color: #293241;
+
+}
+
+#customer .container .card {
+    padding: 0 12px;
+    margin: 0 12px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+#customer .container .card .stars {
+    margin-bottom: 32px;
+}
+
+#customer .container .card p {
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+
+    /* or 178% */
+    text-align: center;
+
+    color: #293241;
+    margin-bottom: 24px;
+}
