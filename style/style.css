@@ -6,6 +6,7 @@
 body,
 ul,
 h1,
+h2,
 h3,
 h4,
 h5,
@@ -43,7 +44,7 @@ button {
 
 /* Col 3 grid*/
 .col-3 {
-    width: calc(100% / 4 - 67.5px);
+    width: calc(100% / 4 - 24px);
 }
 
 /* Col 4 grid*/
@@ -58,12 +59,12 @@ button {
 
 /* Col 8 grid*/
 .col-8 {
-    width: calc(1344px * 2/3 - 24px);
+    width: calc(1344px * 2 / 3 - 24px);
 }
 
 /* Col 10 grid*/
 .col-10 {
-    width: calc(1344px * 5/6 - 24px);
+    width: calc(1344px * 5 / 6 - 24px);
 }
 
 /* Navbar */
@@ -75,6 +76,32 @@ button {
 
 #navbar .container {
     justify-content: space-between;
+    position: relative;
+}
+
+#navbar .container #rect {
+    box-sizing: border-box;
+    position: absolute;
+    width: 832.89px;
+    height: 1764px;
+    left: -190px;
+    top: -305px;
+    background: #FFFFFF;
+    opacity: 0.05;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(-30deg);
+}
+
+#navbar .container #rect1 {
+    position: absolute;
+    width: 832.89px;
+    height: 1764px;
+    left: 1032.11px;
+    top: -405px;
+    background: #FFFFFF;
+    opacity: 0.05;
+    transform: rotate(-30deg);
 }
 
 #navbar .logo {
@@ -86,39 +113,49 @@ button {
     margin: auto;
 }
 
-#navbar .menu {
-    padding: 0 12px;
-}
-
 #navbar ul {
+    display: flex;
+    gap: 48px;
     list-style: none;
 }
 
-#navbar ul::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* TODO */
-#navbar ul li {
-    float: left;
-    margin: auto 12px;
-}
-
 #navbar ul li a {
-    font-family: 'Anybody', cursive;
     font-family: 'Anybody';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 17px;
-    color: white;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+    opacity: 0.6;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
     text-decoration: none;
 }
 
-#navbar ul li a .active {
-    font-weight: bold;
+#navbar ul li .active {
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-decoration: none;
 }
 
 #navbar .button {
@@ -157,6 +194,8 @@ button {
     background-image: url(../images/);
     background-position: 295px 449px;
 }
+
+#hero .container {}
 
 #hero .container .content {
     margin-top: 191px;
@@ -255,13 +294,27 @@ button {
 
 }
 
+#hero .content img {
+    z-index: 100;
+    position: relative;
+
+}
+
 /* Customer */
 
-#customer .container {}
+#customer .container {
+    gap: 24px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+#customer .container:first-child {
+    margin-bottom: 70px;
+}
 
 #customer .container h5 {
     padding-top: 422px;
-    width: 872px;
+    height: 124px;
 
     font-family: 'Anybody';
     font-style: normal;
@@ -276,18 +329,37 @@ button {
 
 }
 
-#customer .container .cards .card {
+#customer .container .col-4 {
     padding: 0 12px;
-    margin: 0 12px;
     text-align: center;
     background-color: rgb(202, 202, 202);
+    display: flex;
+    flex-direction: column;
 }
 
-#customer .container .cards .card .stars {
+#customer .container>.col-4 .brand-icon {
+    width: 200px;
+    height: 78px;
+    align-self: center;
+}
+
+#customer .container>.col-4 .stars {
     margin-bottom: 32px;
+    display: flex;
+    gap: 8px;
+    align-self: center;
+    width: 152px;
 }
 
-#customer .container .cards .card p {
+#customer .container>.col-4 .stars img {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+}
+
+#customer .container .col-4 p {
+    align-self: center;
+
     font-family: 'Anybody';
     font-style: normal;
     font-weight: 400;
@@ -345,21 +417,24 @@ button {
 }
 
 #vector .container .c-col-3 {
-    padding: 41px 0;
+    padding: 42px 0 40px 0;
     display: flex;
     justify-content: space-around;
     position: relative;
+
 }
 
-#vector .container .cards .cards .cards .card {
+#vector .container .cards .card {
     background: url('../images/Group.png');
     background-repeat: no-repeat;
     background-color: #1E2746;
     padding: 24px;
+    box-sizing: border-box;
     border-radius: 12px;
 }
 
-#vector .container .cards .cards .cards .card h2 {
+
+#vector .container .cards .card h2 {
     margin-top: 0;
     margin-bottom: 16px;
     text-align: left;
@@ -377,7 +452,7 @@ button {
 
 }
 
-#vector .container .cards .cards .col-3 p {
+#vector .container .cards .col-3 p {
     margin-bottom: 0;
     text-align: left;
 
@@ -398,6 +473,9 @@ button {
 #robust .container {
     justify-content: space-between;
     margin-bottom: 192.29px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    gap: 112px;
 }
 
 #robust .container .row {
@@ -405,12 +483,9 @@ button {
     flex-direction: column;
     justify-content: space-between;
     height: 379.1px;
-    margin-left: 12px;
 }
 
-#robust .container .row {
-    margin-right: 112px;
-}
+#robust .container .row {}
 
 #robust .container .row img {
     margin-bottom: 27.55px;
@@ -421,7 +496,6 @@ button {
 }
 
 #robust .container .contentT1 {
-    margin-right: 12px;
     width: 648px;
     height: 320.39px;
 }
@@ -512,6 +586,7 @@ button {
     list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 #analisis .container .contentT2 ul li::before {
@@ -523,7 +598,6 @@ button {
 #analisis .container .contentT2 ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
 }
 
 #analisis .container .contentT2 ul li:first-child {
@@ -545,6 +619,8 @@ button {
 }
 
 #pricing .container {
+    padding: 0 12px;
+    box-sizing: border-box;
     background-color: #F0F9FF;
 }
 
@@ -593,6 +669,11 @@ button {
     transition: .1ms ease-in-out;
     border-radius: 24px;
     margin-bottom: 150px;
+    position: relative;
+}
+
+#pricing .container .cards .card:hover {
+    background: url(../images/Shap.png);
 }
 
 
@@ -618,12 +699,14 @@ button {
     gap: 12px;
     align-items: flex-end;
     margin-bottom: 32px;
+    position: relative;
 }
 
 #pricing .container .cards .card .pricing-box .bag-icon {
     width: 44px;
     height: 44px;
     padding: 14px;
+    border-radius: 12px;
 }
 
 #pricing .container .cards .yellow .pricing-box .bag-icon {
@@ -697,7 +780,9 @@ button {
     /* Inside auto layout */
 }
 
-#pricing .container .cards .card .pricing-box .pricet p {
+#pricing .container .cards .card .pricing-box p {
+    margin-bottom: 2px;
+
     font-family: 'Inter';
     font-style: italic;
     font-weight: 400;
@@ -708,6 +793,27 @@ button {
 
     /* Color/400 */
     color: #545B67;
+
+}
+
+#pricing .container .cards .blue .pricing-box span {
+    padding: 6px 16px;
+    background-color: #1681FE;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* identical to box height */
+
+    color: #FFFFFF;
+
 
 }
 
@@ -746,7 +852,6 @@ button {
 }
 
 #pricing .container .cards .card ul li::before {
-    content: url('../images/User\ Interface/Vector.svg');
     margin-right: 12px;
     height: 24px;
     width: 24px;
@@ -762,16 +867,19 @@ button {
 }
 
 #pricing .container .cards .blue ul li::before {
+    content: url('../images/User\ Interface/Vector copy.svg');
     color: #1681FE;
 }
 
 #pricing .container .cards .green ul li::before {
+    content: url('../images/User\ Interface/Vector copy 2.svg');
     color: #448C74;
 }
 
 #pricing .container .cards .card button {
     padding: 14px 145px;
     border-radius: 12px;
+    width: 70px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -780,12 +888,8 @@ button {
     line-height: 19px;
 
     /* Yellow */
+    color: #EDCB50;
 
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 #pricing .container .cards .yellow button {
@@ -804,14 +908,16 @@ button {
 }
 
 
-#testimonial {}
+#testimonial {
+    overflow: hidden;
+}
 
 #testimonial .container .group {
     position: absolute;
     width: 446.82px;
     height: 608.43px;
     left: 1300.5px;
-    top: 5330.37px;
+    top: 5500.37px;
     transform: rotate(-145.79deg);
 }
 
